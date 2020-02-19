@@ -28,5 +28,5 @@ for index in range(24):
     if index not in top_ip.keys():
         print("no key = " + str(index))
     else:
-        top_ip_three = sorted(top_ip[index], key=lambda key:key[1], reverse=True)[0:3]
+        top_ip_three = sorted(top_ip[index], key=itemgetter(1), reverse=True)[0:3]
         print (index, top_ip_three)
