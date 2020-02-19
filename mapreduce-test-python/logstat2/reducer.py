@@ -47,7 +47,11 @@ for ip, count in sorted_dict_ip_count:
 
 for index in range(24):
     if index not in top_ip.keys():
-        print("no key = " + str(index))
+        # print("no key = " + str(index))
+        pass
     else:
         top_ip_three = sorted(top_ip[index], key=itemgetter(1), reverse=True)[0:3]
-        print (index, top_ip_three)
+        # print (index, top_ip_three)
+
+for hour, ip, count in top_ip_three:
+    print '%s\t%s' % (hour, ip, count)
