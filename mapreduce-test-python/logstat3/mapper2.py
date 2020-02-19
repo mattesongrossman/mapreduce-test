@@ -1,12 +1,32 @@
-#!/usr/bin/python
-# --*-- coding:utf-8 --*--
-import re
+#!usr/bin/python
+
+from operator import itemgetter
 import sys
 
-# pat = re.compile('(?P<ip>\d+.\d+.\d+.\d+).*?\d{4}:(?P<hour>\d{2}):\d{2}.*? ')
-for line in sys.stdin:
-    print(line)
-    print("test")
-    # match = pat.search(line)
-    # if match:
-    #     print '%s\t%s' % ('[' + match.group('hour') + ':00' + ']' + match.group('ip'), 1)
+file_object = open("log-format.txt","r")
+
+top_ip = {}
+
+
+# print(file_object.readline())
+
+for line in file_object:
+    # print(line)
+    line = line.strip().split('\t')
+    hour_ip, count = line
+    hour = hour_ip[1:3]
+    ip = hour_ip[7:]
+    hour = int(hour)
+    count = int(count)
+    if hour not in top_ip.keys():
+        top_ip[hour] = [[ip, count]]
+    else:
+        top_ip[hour].append([ip, count])
+
+
+for index in range(24):
+    if index not in top_ip.keys():
+        print("no key = " + str(index))
+    else:
+        top_ip_three = sorted(top_ip[index], key=lambda key:key[1], reverse=True)[0:3]
+        print (index, top_ip_three)

@@ -18,6 +18,6 @@ for line in sys.stdin:
 	except ValueError:
 		pass
 
-for index in range(24):
-    top_ip_three = sorted(top_ip[index], key=lambda v:v[1], reverse=True)[0:3]
-    print '%s\t%s' % (index, top_ip_three)
+for hour in range(24):
+    top_ip_three = sorted(top_ip[hour], key=lambda key:key[1], reverse=True)[0:3]
+    print '%s\t%s' % (hour, top_ip_three)
