@@ -34,3 +34,7 @@ for line in sys.stdin:
 sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0))
 for ip, count in sorted_dict_ip_count:
     print '%s\t%s' % (ip, count)
+
+sorted_dict_ip_count = sorted(key=itemgetter(0), dict_ip_count.items())
+for ip, count in sorted_dict_ip_count:
+    print '%s\t%s' % (ip, count)
