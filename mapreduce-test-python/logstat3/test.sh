@@ -31,9 +31,9 @@
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /logstat3/output/
 # /usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../../mapreduce-test-data/access.log /logstat3/input/
 /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
--Dmapred.reduce.tasks=1 -Dstream.num.map.output.key.fields=2 -input ../../mapreduce-test-python/logstat3/access.log -output ../../mapreduce-test-python/logstat3/output/count_by_hour -file ../../mapreduce-test-python/logstat3/mapper.py -mapper ../../mapreduce-test-python/logstat3/mapper.py -file ../../mapreduce-test-python/logstat3/reducer.py -reducer ../../mapreduce-test-python/logstat3/reducer.py
+-Dmapred.reduce.tasks=1 -Dstream.num.map.output.key.fields=2 -input /logstat3/access.log -output /logstat3/output/count_by_hour -file ../../mapreduce-test-python/logstat3/mapper.py -mapper ../../mapreduce-test-python/logstat3/mapper.py -file ../../mapreduce-test-python/logstat3/reducer.py -reducer ../../mapreduce-test-python/logstat3/reducer.py
 /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
--Dmapred.reduce.tasks=1 -Dstream.num.map.output.key.fields=2 -input ../../mapreduce-test-python/logstat3/output/count_by_hour -output ../../mapreduce-test-python/logstat3/output/top_count_by_hour -file ../../mapreduce-test-python/logstat3/mapper2.py -mapper ../../mapreduce-test-python/logstat3/mapper2.py -file ../../mapreduce-test-python/logstat3/reducer2.py -reducer ../../mapreduce-test-python/logstat3/reducer2.py
+-Dmapred.reduce.tasks=1 -Dstream.num.map.output.key.fields=2 -input /logstat3/output/count_by_hour -output /logstat3/output/top_count_by_hour -file ../../mapreduce-test-python/logstat3/mapper2.py -mapper ../../mapreduce-test-python/logstat3/mapper2.py -file ../../mapreduce-test-python/logstat3/reducer2.py -reducer ../../mapreduce-test-python/logstat3/reducer2.py
 /usr/local/hadoop/bin/hdfs dfs -cat /logstat3/output/count_by_hour
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat3/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat3/output/
