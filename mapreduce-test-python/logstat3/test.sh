@@ -38,7 +38,7 @@
 -input /output/count_by_hour \
 -output /output/top_count_by_hour \
 -file mapper2.py -mapper mapper2.py \
--file reducer2.py -reducer reducer2.py \
+-file reducer2.py -reducer reducer2.py
 /usr/local/hadoop/bin/hdfs dfs -cat /logstat3/output/count_by_hour
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat3/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat3/output/
