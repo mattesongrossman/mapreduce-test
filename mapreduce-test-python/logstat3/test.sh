@@ -29,9 +29,9 @@
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat3/output/
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /logstat3/input/
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /logstat3/output/
-/usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../../mapreduce-test-data/access.log /logstat3/input/
+# /usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../../mapreduce-test-data/access.log /logstat3/input/
 /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
--Dmapred.reduce.tasks=1 -Dstream.num.map.output.key.fields=2 -input /input/* -output /output/count_by_hour -file mapper.py -mapper mapper.py -file reducer.py -reducer reducer.py
+-Dmapred.reduce.tasks=1 -Dstream.num.map.output.key.fields=2 -input ../../mapreduce-test-data/access.log -output /output/count_by_hour -file mapper.py -mapper mapper.py -file reducer.py -reducer reducer.py
 /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
 -Dmapred.reduce.tasks=1 -Dstream.num.map.output.key.fields=2 -input /output/count_by_hour -output /output/top_count_by_hour -file mapper2.py -mapper mapper2.py -file reducer2.py -reducer reducer2.py
 /usr/local/hadoop/bin/hdfs dfs -cat /logstat3/output/count_by_hour
