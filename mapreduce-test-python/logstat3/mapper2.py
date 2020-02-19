@@ -3,14 +3,14 @@
 from operator import itemgetter
 import sys
 
-file_object = open("log-format.txt","r")
+# file_object = open("log-format.txt","r")
 
 top_ip = {}
 
 
 # print(file_object.readline())
 
-for line in file_object:
+for line in sys.stdin:
     # print(line)
     line = line.strip().split('\t')
     hour_ip, count = line
