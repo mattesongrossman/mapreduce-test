@@ -35,4 +35,7 @@ for ip, count in sorted_dict_ip_count:
 for hour in top_ip:
     top_ip_three[hour] = sorted(top_ip[hour], key=itemgetter(1), reverse=True)[0:3]
 
-print (top_ip_three)
+for hour in top_ip_three:
+    print '%s\t%s' % ("Hour = " + str(hour) + ", Top 3 IP's and Count = " + top_ip_three[hour])
+
+# print (top_ip_three)
