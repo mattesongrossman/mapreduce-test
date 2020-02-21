@@ -5,36 +5,26 @@ import sys
 dict_ip_count = {}
 top_ip = {}
 
-for line in sys.stdin:
+file_object = open("log-format.txt","r")
+
+
+for line in file_object:
     line = line.strip()
     ip, num = line.split('\t')
     try:
         num = int(num)
+        ip
         dict_ip_count[ip] = dict_ip_count.get(ip, 0) + num
 
     except ValueError:
         pass
 
-#!/usr/bin/python
-# from operator import itemgetter
-# import sys
-#
-# dict_ip_count = {}
-#
-# for line in sys.stdin:
-#     line = line.strip()
-#     ip, num = line.split('\t')
-#     try:
-#         num = int(num)
-#         dict_ip_count[ip] = dict_ip_count.get(ip, 0) + num
-#
-#     except ValueError:
-#         pass
 
 
 sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0))
+print(sorted_dict_ip_count)
 for ip, count in sorted_dict_ip_count:
-    print '%s\t%s' % (ip, count)
+    print (ip, count)
     # hour_ip  = ip.strip().split('\t')
 #     hour = ip[1:3]
 #     ip = hour_ip[7:]
