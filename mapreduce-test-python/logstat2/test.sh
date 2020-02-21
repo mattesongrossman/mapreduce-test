@@ -1,3 +1,4 @@
+# Stan Mykhaylichenko + Matteson Grossman (LAB 1) - CISC 5950
 #!/bin/sh
 ../../start.sh
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/input/

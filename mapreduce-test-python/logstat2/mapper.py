@@ -1,3 +1,4 @@
+# Stan Mykhaylichenko + Matteson Grossman (LAB 1) - CISC 5950
 #!/usr/bin/python
 # --*-- coding:utf-8 --*--
 import re

@@ -1,3 +1,4 @@
+# Stan Mykhaylichenko + Matteson Grossman (LAB 1) - CISC 5950
 #!/usr/bin/python
 from operator import itemgetter
 import sys
