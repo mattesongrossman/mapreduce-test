@@ -36,6 +36,6 @@ for hour in top_ip:
     top_ip_three[hour] = sorted(top_ip[hour], key=itemgetter(1), reverse=True)[0:3]
 
 for hour in top_ip_three:
-    print '%s\t%s' % ("Hour = " + str(hour) + ", Top 3 IP's and Count = " + str(top_ip_three[hour][0])+ str(top_ip_three[hour][1])+ str(top_ip_three[hour][2]))
+    print ("Hour = " + str(hour) + ", Top 3 IP's and Count = " + str(top_ip_three[hour][0])+ str(top_ip_three[hour][1])+ str(top_ip_three[hour][2]))
 
 # print (top_ip_three)
