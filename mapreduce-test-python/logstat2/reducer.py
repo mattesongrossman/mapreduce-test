@@ -8,7 +8,7 @@ top_ip = {}
 
 for line in sys.stdin:
     line = line.strip()
-    ip, num = line.split(' ')
+    ip, num = line.split('\t')
     try:
         num = int(num)
         ip
