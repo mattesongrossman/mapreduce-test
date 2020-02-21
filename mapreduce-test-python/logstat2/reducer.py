@@ -1,4 +1,3 @@
-# Stan Mykhaylichenko + Matteson Grossman (LAB 1) - CISC 5950
 #!/usr/bin/python
 from operator import itemgetter
 import sys
@@ -40,3 +39,5 @@ for hour in top_ip_three:
     print ("Hour = " + str(hour) + ", Top 3 IP's and Count = " + str(top_ip_three[hour][0])+ str(top_ip_three[hour][1])+ str(top_ip_three[hour][2]))
 
 # print (top_ip_three)
+
+# Stan Mykhaylichenko + Matteson Grossman (LAB 1) - CISC 5950

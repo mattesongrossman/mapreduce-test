@@ -1,4 +1,3 @@
-# Stan Mykhaylichenko + Matteson Grossman (LAB 1) - CISC 5950
 #!/usr/bin/python
 # --*-- coding:utf-8 --*--
 import re
@@ -10,3 +9,5 @@ for line in sys.stdin:
     match = pat.search(line)
     if match:
         print '%s\t%s' % ('[' + match.group('hour') + ':00' + ']' + match.group('ip'), 1)
+
+# Stan Mykhaylichenko + Matteson Grossman (LAB 1) - CISC 5950
