@@ -33,10 +33,10 @@ for ip, count in sorted_dict_ip_count:
         top_ip[hour].append([ip, count])
 
 
-for hour in range(24):
-    if hour not in top_ip.keys():
-        print '%s\t%s' % ("no key = " + str(hour))
-        pass
-    else:
-        top_ip_three = sorted(top_ip[hour], key=itemgetter(1), reverse=True)[0:3]
-        print '%s\t%s' % (hour, top_ip_three)
+# for hour in range(24):
+#     if hour not in top_ip.keys():
+#         print '%s\t%s' % ("no key = " + str(hour))
+#         pass
+#     else:
+#         top_ip_three = sorted(top_ip[hour], key=itemgetter(1), reverse=True)[0:3]
+#         print '%s\t%s' % (hour, top_ip_three)
