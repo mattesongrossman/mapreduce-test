@@ -4,6 +4,7 @@ import sys
 
 dict_ip_count = {}
 top_ip = {}
+top_ip_three = {}
 
 file_object = open("log-format.txt","r")
 
@@ -35,17 +36,15 @@ for ip, count in sorted_dict_ip_count:
         top_ip[hour].append([ip, count])
 
 
-for hour in range(24):
-    if hour not in top_ip.keys():
-        print("no key = " + str(hour))
-        pass
-    else:
-        top_ip_three = sorted(top_ip[hour], key=itemgetter(1), reverse=True)[0:3]
-        print (hour, top_ip_three)
+# top_ip_three = sorted(top_ip.items(), key=itemgetter(1), reverse=True)[0:3]
+for hour in top_ip:
+        top_ip_three[hour] = sorted(top_ip[hour], key=itemgetter(1), reverse=True)[0:3]
+
 
 # for hour, ip, count in top_ip_three:
 #     print (hour, ip, count)
 
+print(top_ip_three)
 
 
 
