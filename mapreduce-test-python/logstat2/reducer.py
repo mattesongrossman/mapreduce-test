@@ -5,10 +5,8 @@ import sys
 dict_ip_count = {}
 top_ip = {}
 
-file_object = open("log-format.txt","r")
 
-
-for line in file_object:
+for line in sys.stdin:
     line = line.strip()
     ip, num = line.split(' ')
     try:
