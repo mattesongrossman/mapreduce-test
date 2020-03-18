@@ -1,9 +1,6 @@
 #!/usr/bin/python
-# --*-- coding:utf-8 --*--
-import re
-import sys
 
-# pat = re.compile('(?P<ip>\d+\.\d+\.\d+\.\d+).*?\d{4}:(?P<hour>\d{2}:\d{2}).*? ')
+import sys
 
 for line in sys.stdin:
     line = line.strip()
@@ -13,5 +10,4 @@ for line in sys.stdin:
     elif words[35] == '0':
         pass
     else:
-        # print(words[6] + "-" + words[35])
-        print '%s\t%s' % (words[6] + "-" + words[35])
+        print '%s\t%s' % (words[6] + "-" + words[35], 1)

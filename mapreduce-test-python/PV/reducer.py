@@ -3,13 +3,10 @@ from operator import itemgetter
 import sys
 
 dict_id_count = {}
-top_id = {}
-top_id_three = {}
-
 
 for line in sys.stdin:
     line = line.strip()
-    id, num = line.split('')
+    id, num = line.split('\t')
     try:
         num = int(num)
         dict_id_count[id] = dict_id_count.get(id, 0) + num
@@ -17,7 +14,7 @@ for line in sys.stdin:
     except ValueError:
         pass
 
-sorted_dict_id_count = sorted(dict_id_count.items(), key=itemgetter(0))
+sorted_dict_id_count = sorted(dict_id_count.items(), key=itemgetter(1), reverse = True)
 for id, count in sorted_dict_id_count:
     print '%s\t%s' % (id, count)
 
